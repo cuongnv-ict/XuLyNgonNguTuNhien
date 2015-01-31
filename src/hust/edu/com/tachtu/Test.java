@@ -7,5 +7,9 @@ public class Test {
 //		PennTokenizer.tokenize("ha noi pho");
 		System.err.println("ok");
 		VietTokenizer tokenizer = new VietTokenizer();
+//		String []str = tokenizer.tokenize("Ha Noi pho");
+//		for(int i =0;i<str.length;i++){
+//			System.err.println(str[i]);
+//		}
 	}
 }
