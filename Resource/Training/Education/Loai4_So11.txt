@@ -1,0 +1,25 @@
+Bài toán tuyển dụng nhân sự cấp cao của công ty hàng đầu thế giới
+Ý tưởng Logic mềm được các công ty "sừng sỏ" sử dụng để tuyển dụng nhân sự cấp cao.
+Toán học là môn khoa học nghiên cứu số và hình, nhưng Toán học là môn khoa học nền tảng hỗ trợ các bộ môn khoa học tự nhiên, khoa học xã hội và khoa học công nghệ để tìm hiểu các quy luật xảy ra trong đời sống, trong thế giới tự nhiên và cả vũ trụ, từ đó tác động tích cực cho sự phát triển của xã hội và nhân loại.
+
+Toán học có thể chia thành 2 phạm trù: phạm trù liên quan trực tiếp đến khoa học tự nhiên và khoa học công nghệ và phạm trù liên quan trực tiếp đến khoa học xã hội. Tất nhiên sự phân chia ranh giới này không thật sự rõ ràng, chẳng hạn, bộ môn xác suất thống kê liên quan đến tất cả các ngành tự nhiên, xã hội và công nghệ. Tuy nhiên, các ứng dụng của xác suất thống kê vào khoa học tự nhiên, công nghệ có những màu sắc khác biệt so với khoa học xã hội.
+
+Để rèn luyện phát triển tư duy Toán học thì ngay từ bậc phổ thông, học sinh thường phải giải các bài toán với sự lập luận và đáp án đúng tuyệt đối. Nhưng ở phương diện xã hội học, kinh tế học, Toán học cần có những thống kê để dự báo sự tăng trưởng của dân số, dự báo sự tăng trưởng của GDP, hay dự báo sự tăng trưởng của một loạt các ngành nghề khác nhau.
+
+Chính vì vậy, bên cạnh “Logic cứng với các đáp án tuyệt đối”, người ta cần có thêm các loại tư duy toán học với “Logic mềm và các đáp án có tính tương đối”. Khi dạy các phép toán cộng trừ cho học sinh lớp 1, chúng ta thường sử dụng các ví dụ trực quan sinh động để mô tả các phép toán. Chẳng hạn có 5 cái bánh, nhận thêm 2 cái bánh hoặc bớt đi 1 cái bánh, hỏi có bao nhiêu cái bánh.
+
+Nhưng sau khi học sinh đã nắm chắc các bài toán ở dạng này, thì cần cho các em quan sát các trạng thái khác biệt xảy ra trong đời sống hàng ngày. Chẳng hạn, bài toán: Mũi thuyền cách mặt nước 5 mét, hỏi khi nước dâng cao thêm 1 mét thì mũi thuyền cách mặt nước bao nhiêu mét?
+
+Và bài toán bắn chim cũng như bài toán được nâng cấp cũng là ý tưởng chung của loại toán logic mềm, để bài toán có tính chất không biên giới cho nhiều lứa tuổi, trong đó có phụ huynh học sinh. Chúng ta có thể hiểu thêm ý tưởng “Logic mềm” qua các bài toán tuyển dụng nhân sự cấp cao của các công ty hàng đầu trên thế giới sau đây.
+
+Bài toán tuyển dụng của Microsoft
+
+Mối sáng cậu bé John đi thang máy từ tầng 52 xuống tầng 1 để đến lớp mẫu giáo. Nhưng cứ buổi chiều, cậu bé đi thang máy đến tầng thứ 50 rồi đi thang bộ để trở về nhà. Hỏi vì sao thế nhỉ?
+
+Bài toán tuyển dụng Giám đốc sản phẩm (Product Manager)​ của Google:
+
+Cần bao nhiêu quả bóng golf để vừa làm đầy cái xe buýt trong hình dưới đây?Bài toán tuyển dụng của Microsoft
+
+Ở một ngôi làng có 100 cặp vợ chồng mà người chồng luôn phản bội người vợ. Mỗi người vợ luôn biết lúc nào thì người không phải chồng mình phản bội, nhưng họ lại không biết lúc nào thì chồng mình phản bội. Ngôi làng này vốn có luật cấm ngoại tình. Bất cứ người vợ nào biết chồng mình không thành thật thì sẽ giết anh ta ngay. Tất cả các phụ nữ đều tuân theo luật lệ này. Một ngày nọ, vị trưởng làng đến thông báo rằng có ít nhất một người chồng đã phản bội. Vậy thì chuyện gì sẽ xảy ra?
+
+Trở lại bài toán bắn chim thì ngoài 3 đáp án nêu ra: “0 con, 1 con, 5 con” còn có một vài đáp án khác nữa trong đó việc khai thác giả thiết “chàng thợ săn chọn vị trí thuận tiện bắn chim” có thể tạo ra 1 đáp án hài hước của bạn đọc là: “Trên cây còn lại 6 con chim”.

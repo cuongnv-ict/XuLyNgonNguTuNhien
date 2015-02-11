@@ -1,0 +1,25 @@
+Đáp án bài toán lớp 1 được nâng cấp
+Theo thầy giáo Trần Phương, đây là bài toán có tư tưởng của môn xã hội học với câu hỏi mở nên không có đáp án tuyệt đối mà chỉ có các đáp án tương đối.
+Đề bài:
+
+Trong một khu rừng rậm, có 5 con chim đậu trên một cành cây cổ thụ có nhiều cành nhiều lá. Một chàng thợ săn chọn vị trí thuận tiện và bắn trúng một con chim và nó rớt khỏi cành cây đang đậu.
+
+Hỏi trên cây còn lại nhiều nhất mấy con chim?
+
+Đáp án:
+
+Đây là một bài toán có tư tưởng của môn xã hội học với câu hỏi mở nên không có đáp án tuyệt đối mà chỉ có các đáp án tương đối. Với các bài toán có đáp án mở thì việc đưa ra đáp số chỉ thật sự có ý nghĩa nếu phần dẫn giải tình huống có sức thuyết phục cao. Bài toán bắn chim là bài kinh điển cho kiểu “Tư duy động”, khác với quy luật thông thường.
+
+“5 – 1 = 4” như bài toán “Nuôi 5 con chim, bán đi 1 con chim hỏi còn lại mấy con chim”. Trong bài toán được nâng cấp này bạn đọc cần chú ý khai thác hết giả thiết có trong bối cảnh: “Trong một khu rừng rậm, có 5 con chim đậu trên 1 cành cây cổ thụ có nhiều cành nhiều lá”. Từ việc khai thác hết yếu tố giả thiết này chúng ta có thể đưa ra các lời giải với các tình huống có thể xảy ra như sau:
+
+1. Lời giải xưa như trái đất: “0 con”
+
+Tiếng súng nổ sẽ gây ra tiếng động và làm 4 con chim khác bay đi còn con chim bị bắn trúng sẽ rớt xuống đất. Như thế trên cây không còn con chim nào.
+
+2. Lời giải đương đại 1: “1 con”
+
+Tiếng súng nổ làm 4 con chim khác bay đi, con chim bị bắn trúng tuy rớt khỏi cành cây đang đậu, nhưng vẫn bị mắc vào một cành cây khác (vì cây cổ thụ có nhiều cành nhiều lá). Vậy ở trường hợp này trên cây còn lại 1 con chim.
+
+3. Lời giải đương đại 2: “5 con”
+
+Vì đầu bài hỏi trên cây còn nhiều nhất mấy con chim nên ta có thể đưa ra các giả định để số chim còn lại trên cây là nhiều nhất. Chẳng hạn con chim mẹ mới sinh con, bị trúng đạn và mắc vào một cành cây khác; 4 con chim con còn non chưa biết bay nên vẫn ở nguyên trên cành. Như thế trường hợp này trên cây còn lại 5 con chim.
