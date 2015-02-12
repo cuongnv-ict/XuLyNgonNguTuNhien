@@ -6,11 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ReadDir {
-	public ReadDir(){
-		
-	}
+	/**
+	 * @param nameFile ten file can doc noi dung
+	 * @return Tra ve noi dung file
+	 **/
 	public String readFile(String nameFile){
 		String content = "";
 		String sCurrentLine;
@@ -32,6 +34,10 @@ public class ReadDir {
 		
 		return content;
 	}
+	/**
+	 * @param folder Thu muc chua cac file can doc noi dung, khong doc cac thu muc con
+	 * @return Tra ve danh sach cac file 
+	 **/
 	public ArrayList<String> listFilesForFolder(File folder) {
 		ArrayList<String> listFiles = new ArrayList<>();
 		if(!folder.exists()){
@@ -49,11 +55,15 @@ public class ReadDir {
 	    }
 	    return listFiles;
 	}
-	public ArrayList<String> readFilesDirectory(String urlDir){
-		ArrayList<String> contentFile = new ArrayList<String>();
+	/**
+	 * @param urlDir Dia chi thu muc chua file
+	 * @return {@link HashMap} Key : ten file  Value : Noi dung file
+	 **/
+	public HashMap<String,String> readFilesDirectory(String urlDir){
+		HashMap<String,String> contentFile = new HashMap<String, String>();
 		ArrayList<String> listFiles = listFilesForFolder(new File(urlDir));
 		for(int i = 0;i<listFiles.size();i++){
-			contentFile.add(readFile(urlDir.concat("/").concat(listFiles.get(i))));			
+			contentFile.put(listFiles.get(i),readFile(urlDir.concat("/").concat(listFiles.get(i))));
 		}
 		return contentFile;
 	}
