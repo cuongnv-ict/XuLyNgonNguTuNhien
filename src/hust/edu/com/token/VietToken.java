@@ -5,17 +5,18 @@ import java.util.HashMap;
 import vn.hus.nlp.tokenizer.VietTokenizer;
 
 public class VietToken {
-	public final int WORLD = 1;
-	public final int LAWS = 2;
-	public final int SPORTS = 3;
-	public final int EDUCATION = 4;
-	public final int ENTERTAINMENT = 5;
+	public static final int WORLD = 1;
+	public static final int LAWS = 2;
+	public static final int SPORTS = 3;
+	public static final int EDUCATION = 4;
+	public static final int ENTERTAINMENT = 5;
 
 	private HashMap<String, AprioriInfomation> info;
 	private HashMap<String, String> temp;
 	private ReadDir dir;
 	private StopToken stopWord;
 	private VietTokenizer tokenizer;
+
 	public VietToken() {
 		info = new HashMap<String, AprioriInfomation>();
 		temp = new HashMap<String, String>();
@@ -24,6 +25,12 @@ public class VietToken {
 		dir = new ReadDir();
 	}
 
+	/**
+	 * @param urlDirectory
+	 *            : Thu muc chua cac file can doc
+	 * @param type
+	 *            : Nhan cua cac file
+	 * */
 	public void process(String urlDirectory, int type) {
 		temp = dir.readFilesDirectory(urlDirectory);
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -33,6 +40,14 @@ public class VietToken {
 		}
 	}
 
+	/**
+	 * @param map
+	 *            : Key-tu suat hien trong file : Value-so lan suat hien
+	 * @param nameFile
+	 *            : Ten file
+	 * @param type
+	 *            : Nhan cua file
+	 */
 	public void setHashMap(HashMap<String, Integer> map, String nameFile,
 			int type) {
 		for (String key : map.keySet()) {
@@ -42,19 +57,19 @@ public class VietToken {
 			}
 			switch (type) {
 			case WORLD:
-				ap.addWorld(nameFile,map.get(key));
+				ap.addWorld(nameFile, map.get(key));
 				break;
 			case LAWS:
-				ap.addLaws(nameFile,map.get(key));
+				ap.addLaws(nameFile, map.get(key));
 				break;
 			case SPORTS:
-				ap.addSports(nameFile,map.get(key));
+				ap.addSports(nameFile, map.get(key));
 				break;
-			case EDUCATION:	
-				ap.addEducation(nameFile,map.get(key));
+			case EDUCATION:
+				ap.addEducation(nameFile, map.get(key));
 				break;
 			case ENTERTAINMENT:
-				ap.addEntertainment(nameFile,map.get(key));
+				ap.addEntertainment(nameFile, map.get(key));
 				break;
 			default:
 				break;
@@ -62,7 +77,15 @@ public class VietToken {
 			info.put(key, ap);
 		}
 	}
-	public HashMap<String, AprioriInfomation> getInfomation(){
+
+	/**
+	 * @return {@link HashMap<String, AprioriInfomation>} 
+	 * 			: Tra ve voi:
+	 * 				Key-la tu cua van ban 
+	 * 				Value-la kieu du lieu AprioriInfomation chua thong tin cua tu do xuat hien trong file nao, 
+	 * 				bao nhieu len,nhan file la gi
+	 */
+	public HashMap<String, AprioriInfomation> getInfomation() {
 		return info;
 	}
 }

@@ -9,11 +9,11 @@ public class AprioriInfomation {
 	private HashMap<String, Integer> listSports;
 	private HashMap<String, Integer> listEducation;
 	private HashMap<String, Integer> listEntertainment;
-	public final int WORLD = 1;
-	public final int LAWS = 2;
-	public final int SPORTS = 3;
-	public final int EDUCATION = 4;
-	public final int ENTERTAINMENT = 5;
+	public static final int WORLD = 1;
+	public static final int LAWS = 2;
+	public static final int SPORTS = 3;
+	public static final int EDUCATION = 4;
+	public static final int ENTERTAINMENT = 5;
 
 	public AprioriInfomation(String word) {
 		this.words = word;
