@@ -31,13 +31,14 @@ public class VietToken {
 	 * @param type
 	 *            : Nhan cua cac file
 	 * */
-	public void process(String urlDirectory, int type) {
+	public int process(String urlDirectory, int type) {
 		temp = dir.readFilesDirectory(urlDirectory);
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		for (String key : temp.keySet()) {
 			map = stopWord.accessStopWord(tokenizer.tokenize(temp.get(key))[0]);
 			setHashMap(map, key, type);
 		}
+		return temp.size();
 	}
 
 	/**

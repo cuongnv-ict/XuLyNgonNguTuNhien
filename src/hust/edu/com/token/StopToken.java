@@ -14,7 +14,7 @@ public class StopToken {
 			"vẫn", "mình", "chỉ", "thì", "đang", "còn", "bị", "mà", "năm",
 			"nhất", "hơn", "sau", "ông", "rất", "anh", "phải", "như", "trên",
 			"tại", "theo", "khi", "nhưng,vào", ",", ".", "?", "{", "}", "(",
-			")", ";", ":", "[", "]", "!","'" };
+			")", ";", ":", "[", "]", "!","'","%","\"","*","-"," ","&","/","@","=","|","+" };
 	// Document http://seo4b.com/thuat-ngu-SEO/stop-words-la-gi.html
 	private String stopWord_two[] = { "a_ha", "à_ơi", "á", "à", "á_à", "ạ",
 			"ai", "ái", "ái_chà", "alô", "ào", "ắt", "ắt_hẳn", "ắt_là", "ấy",
@@ -85,9 +85,85 @@ public class StopToken {
 		contentFile = contentFile.toLowerCase().trim();
 		String[] letter = contentFile.split(" ");
 		for (int i = 0; i < letter.length; i++) {
+			// Khư khoảng trắng
 			if (letter[i].equalsIgnoreCase(" ")
 					|| letter[i].equalsIgnoreCase("")) {
 				continue;
+			}
+			// Khử số
+			try{
+				Float.parseFloat(letter[i]);
+				continue;
+			}catch(Exception e){
+				
+			}
+			// Khử ký tự
+			if(letter[i].length() == 1){
+				continue;
+			}
+			//Khử thời gian
+			if(letter[i].split("-").length == 2 ||letter[i].split("-").length== 3){
+				String str[] = letter[i].split("-");
+				boolean flags = false;
+				for(int k =0; k <str.length;k++){
+					try{
+						Float.parseFloat(str[k]);
+						flags = true;
+						break;
+					}catch(Exception e){
+						
+					}
+				}
+				if(flags){
+					continue;
+				}
+			}
+			if(letter[i].split("/").length == 2 ||letter[i].split("/").length== 3){
+				String str[] = letter[i].split("/");
+				boolean flags = false;
+				for(int k =0; k <str.length;k++){
+					try{
+						Float.parseFloat(str[k]);
+						flags = true;
+						break;
+					}catch(Exception e){
+						
+					}
+				}
+				if(flags){
+					continue;
+				}
+			}
+			if(letter[i].split(",").length == 2 ||letter[i].split(",").length== 3){
+				String str[] = letter[i].split(",");
+				boolean flags = false;
+				for(int k =0; k <str.length;k++){
+					try{
+						Float.parseFloat(str[k]);
+						flags = true;
+						break;
+					}catch(Exception e){
+						
+					}
+				}
+				if(flags){
+					continue;
+				}
+			}
+			// Loai bo gio
+			if(letter[i].split("h").length == 1 ||letter[i].split("h").length== 2){
+				String str[] = letter[i].split("h");
+				boolean flags = true;
+				for(int k =0; k <str.length;k++){
+					try{
+						Float.parseFloat(str[k]);
+					}catch(Exception e){
+						flags = false;
+					}
+				}
+				if(flags){
+					continue;
+				}
 			}
 			if (map.get(letter[i]) == null) {
 				if (hmap.get(letter[i]) == null) {
