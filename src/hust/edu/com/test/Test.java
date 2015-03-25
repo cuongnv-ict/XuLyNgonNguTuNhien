@@ -47,6 +47,7 @@ public class Test {
 //			pw.println(key+":"+count);
 //		}
 //		pw.close();
+		// Khoi tao 
 		Classify sify =  new Classify("Resource/Training/World");
 		String name = sify.nextFile();
 		System.out.println("So file trong thu muc : "+sify.getNumberFile());
@@ -58,7 +59,7 @@ public class Test {
 			}
 			name = sify.nextFile();
 		}
-		
+		// reset thu muc
 		sify.setUrlDir("Resource/Training/Laws");
 		name = sify.nextFile();
 		System.out.println("So file trong thu muc : "+sify.getNumberFile());
@@ -70,7 +71,7 @@ public class Test {
 			}
 			name = sify.nextFile();
 		}
-		
+		// lay file theo so thu tu
 		HashMap<String, Integer> map = sify.processFile(5);
 		System.out.println("Ten file doc : "+ name);		
 		for(String key:map.keySet()){
