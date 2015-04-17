@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/cuongnv/workspace/XuLyNgonNguTuNhien/vntokenizer/vn.hus.nlp.tokenizer-4.1.1.jar"/>
+	<classpathentry kind="src" path="/JVnTextPro-v.2.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

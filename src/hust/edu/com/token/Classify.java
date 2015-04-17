@@ -61,7 +61,11 @@ public class Classify {
 	public int getCounting() {
 		return count;
 	}
-
+        
+        public String getNameFile(){
+            return "";
+        }
+        
 	public void setUrlDir(String url) {
 		this.urlDir = url;
 		listFile = dir.listFilesForFolder(new File(url));
