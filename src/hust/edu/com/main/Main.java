@@ -6,7 +6,9 @@
 package hust.edu.com.main;
 
 import AprioriKey.ClasstifyNew;
+import hust.edu.com.naivebayes.NaiveBayes;
 import hust.edu.com.token.ReadResult;
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -23,6 +25,8 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     private ClasstifyNew test;
+    private NaiveBayes nv;
+    private boolean flags;
 
     public Main() {
         initComponents();
@@ -77,6 +81,7 @@ public class Main extends javax.swing.JFrame {
         trungbinh = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         chapnhan = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -158,7 +163,7 @@ public class Main extends javax.swing.JFrame {
 
         loai5.setEditable(false);
 
-        jButton2.setText("Huấn luyện");
+        jButton2.setText("Apriori");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -229,6 +234,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Naivebayes");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -255,15 +267,6 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(loai3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(loai4)
                             .addComponent(loai1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(5, 5, 5)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(trungbinh)
-                            .addComponent(loai5)))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,7 +274,17 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chapnhan)))
+                        .addComponent(chapnhan))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(trungbinh)
+                            .addComponent(loai5)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -304,17 +317,16 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
+                                .addGap(36, 36, 36)
                                 .addComponent(kiemtra, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(83, 83, 83)
                                 .addComponent(thongtin, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,29 +353,6 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loai2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loai3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loai4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(loai5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(trungbinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -396,8 +385,36 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(44, 44, 44)
                                 .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator3)
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(loai2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(loai3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(loai4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(loai5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(trungbinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jSeparator1)
+                .addContainerGap())
         );
 
         pack();
@@ -450,7 +467,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
         trungbinh.setText(String.valueOf((double) correct / sum));
-
+        flags = true;
         ReadResult result = new ReadResult();
         if (result.setPathFile("result.txt") == 1) {
             HashMap<Integer, Integer> map = result.getInfoKey();
@@ -469,24 +486,58 @@ public class Main extends javax.swing.JFrame {
 
     private void kiemtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kiemtraActionPerformed
         // TODO add your handling code here:
-        if (text.getText() == "") {
+        if (text.getText() == " ") {
             JOptionPane.showMessageDialog(rootPane, "Nhập nội dung cần phân loại", null, JOptionPane.INFORMATION_MESSAGE);
         }
-        int type = test.checkOneNew(text.getText());
-        switch (type) {
-            case -1:
-                JOptionPane.showMessageDialog(rootPane, "Văn bản nhập vào không thuộc 1 trong 5 nhóm văn bản\ntham gia huấn luyên");
-                break;
-            default:
-                JOptionPane.showMessageDialog(rootPane,"Văn bản thuộc nhóm : "+type);
+        if (flags) {
+            int type = test.checkOneNew(text.getText());
+            switch (type) {
+                case -1:
+                    JOptionPane.showMessageDialog(rootPane, "Văn bản nhập vào không thuộc 1 trong 5 nhóm văn bản\ntham gia huấn luyên");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(rootPane, "Văn bản thuộc nhóm : " + type);
+            }
+            double point[] = test.getMark();
+            DecimalFormat df = new DecimalFormat("###.##");
+            type1.setText(String.valueOf(df.format(point[0])));
+            type2.setText(String.valueOf(df.format(point[1])));
+            type3.setText(String.valueOf(df.format(point[2])));
+            type4.setText(String.valueOf(df.format(point[3])));
+            type5.setText(String.valueOf(df.format(point[4])));
+        } else {
+            double point[] = nv.getScore(text.getText());
+            DecimalFormat df = new DecimalFormat("###.##");
+            type1.setText(String.valueOf(df.format(point[2])));
+            type2.setText(String.valueOf(df.format(point[4])));
+            type3.setText(String.valueOf(df.format(point[1])));
+            type4.setText(String.valueOf(df.format(point[0])));
+            type5.setText(String.valueOf(df.format(point[3])));
+            int i, j = 0;
+            for (i = 0; i < point.length; i++) {
+                if (point[i] > point[j]) {
+                    j = i;
+                }
+            }
+            switch (j) {
+                case 0:
+                    j = 4;
+                    break;
+                case 1:
+                    j = 3;
+                    break;
+                case 2:
+                    j = 1;
+                    break;
+                case 3:
+                    j = 5;
+                    break;
+                case 4:
+                    j = 2;
+                    break;
+            }
+            JOptionPane.showMessageDialog(rootPane, "Văn bản thuộc nhóm : " + j);
         }
-        double point[] = test.getMark();
-        DecimalFormat df = new DecimalFormat("###.##");
-        type1.setText(String.valueOf(df.format(point[0])));
-        type2.setText(String.valueOf(df.format(point[1])));
-        type3.setText(String.valueOf(df.format(point[2])));
-        type4.setText(String.valueOf(df.format(point[3])));
-        type5.setText(String.valueOf(df.format(point[4])));
     }//GEN-LAST:event_kiemtraActionPerformed
 
     private void chapnhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chapnhanActionPerformed
@@ -506,6 +557,22 @@ public class Main extends javax.swing.JFrame {
         Infomation info = new Infomation(this, true);
         info.setVisible(true);
     }//GEN-LAST:event_thongtinActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        nv = new NaiveBayes();
+        nv.train(new File("Resource/Training"));
+        double o[];
+        o = nv.test(new File("Resource/Test"));
+        loai4.setText(String.valueOf(o[0]));
+        loai3.setText(String.valueOf(o[1]));
+        loai1.setText(String.valueOf(o[2]));
+        loai5.setText(String.valueOf(o[3]));
+        loai2.setText(String.valueOf(o[4]));
+        trungbinh.setText(String.valueOf((o[0] + o[1] + o[2] + o[3] + o[4]) / 5.0));
+        flags = false;
+        kiemtra.setEnabled(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void loadTable(Object[] title, HashMap<Integer, Integer> map, JTable table) {
         int max = 0, i, count = 0;
@@ -573,6 +640,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable TableTrain;
     private javax.swing.JTextField chapnhan;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
